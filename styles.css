@@ -1,0 +1,54 @@
+/* Centralizar o conteúdo da página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Cor de fundo opcional */
+}
+
+/* Estilos para o contêiner do botão toggle */
+.toggle-switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+
+/* Esconder o checkbox padrão */
+.toggle-checkbox {
+    display: none;
+}
+
+/* Estilos para o label que funciona como botão */
+.toggle-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    position: relative;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Estilo para o estado "desligado" */
+.toggle-label::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #aaa;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Quando o checkbox estiver marcado, mudar as cores e a posição da bolinha */
+.toggle-checkbox:checked + .toggle-label {
+    background-color: #4cd137;
+    border-color: #4cd137;
+}
+
+.toggle-checkbox:checked + .toggle-label::before {
+    transform: translateX(30px);
+}
